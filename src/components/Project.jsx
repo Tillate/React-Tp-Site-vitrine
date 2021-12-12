@@ -6,8 +6,8 @@ export default function Project(props) {
     const project = currentProject[props.projectNumber]
 
       // random background circle
-    let left = Math.floor(Math.random() * 200 + 900) + "px";
-    let top = Math.floor(Math.random() * 200 + 100) + "px";
+    let left = Math.floor(Math.random() * 200 + 1100) + "px";
+    let top = Math.floor(Math.random() * 200 + 300) + "px";
     let size = "scale(" + (Math.random() + 0.7) + ")";
 
     return (
