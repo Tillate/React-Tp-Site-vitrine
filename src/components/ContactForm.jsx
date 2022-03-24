@@ -95,63 +95,28 @@ const ContactForm = () => {
   };
 
   return (
-    <form className="contact-form">
-      <h2>Contactez-moi</h2>
-      <div className="form-content">
-        <input
-          type="text"
-          id="name"
-          name="name"
-          required
-          onChange={(e) => setName(e.target.value)}
-          placeholder="nom *"
-          value={name}
-        />
-        <input
-          type="text"
-          id="company"
-          name="company"
-          onChange={(e) => setCompany(e.target.value)}
-          placeholder="société"
-          value={company}
-        />
-        <input
-          type="text"
-          id="phone"
-          name="phone"
-          onChange={(e) => setPhone(e.target.value)}
-          placeholder="téléphone"
-          value={phone}
-        />
-        <div className="email-content">
-          <label id="not-mail">Email non valide</label>
-          <input
-            type="mail"
-            id="email"
-            name="email"
-            required
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="email *"
-            value={email}
-          />
-        </div>
-        <textarea
-          id="message"
-          name="message"
-          onChange={(e) => setMessage(e.target.value)}
-          placeholder="message *"
-          value={message}
-          required
-        />
-      </div>
-      <input
-        className="button hover"
-        type="submit"
-        value="Envoyer"
-        onClick={handleSubmit}
-      />
-      <div className="form-message"></div>
-    </form>
+    <div className="contact">
+      <form 
+        name="contact" 
+        method="post" 
+        className="contact_form" 
+        data-netlify="true" 
+        onSubmit="submit"
+      >
+        <input type="hidden" name="form-name" value="contact" />
+        <label for="name">Nom:</label>
+        <input type="text" name="name"/>
+
+        <label for="email">Email:</label>
+        <input type="email" name="email"/>
+
+        <label for="message">Message:</label>
+        <textarea name="message"></textarea>
+
+        <button type="submit">Envoyer</button>
+      </form>
+    </div>
+    
   );
 };
 export default ContactForm;
